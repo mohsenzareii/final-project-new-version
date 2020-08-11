@@ -4,6 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//add mysql module
+let mySQL = require('mysql');
+
+//add connection to mysql 
+const mysqlConnection = mySQL.createConnection({
+  host : 'localhost',
+  user : 'root',
+  password : 'mohsen1371291',
+  database : 'final_project'
+});
+
+mysqlConnection.connect();
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
